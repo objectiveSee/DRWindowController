@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C8039921-43CC-4B5A-B4EA-6BDC96C47442</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DRWindows</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>78CA4688-6ECE-4B20-B765-DDF362A85000</key>
+		<string>https://github.com/objectiveSee/DRWindows.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DRWindows/DRWindows.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>78CA4688-6ECE-4B20-B765-DDF362A85000</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/objectiveSee/DRWindows.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>78CA4688-6ECE-4B20-B765-DDF362A85000</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>78CA4688-6ECE-4B20-B765-DDF362A85000</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DRWindows</string>
+		</dict>
+	</array>
+</dict>
+</plist>

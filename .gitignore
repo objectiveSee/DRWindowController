@@ -1,0 +1,24 @@
+# Xcode Noise
+*build
+*xcuserdata
+*xcuserstate
+*.pbxuser
+*.mode1v3
+*.mode2v3
+
+# Environment-specific Files
+build.h
+
+# OS X Noise
+*.DS_Store
+
+#Cocoa Pods
+Pods/
+Podfile.lock
+*xcworkspace
+
+#injection
+iOS/iOSInjectionProject
+
+#goEvil/addEvil
+Evil_Apples_AdHoc.mobileprovision.1
