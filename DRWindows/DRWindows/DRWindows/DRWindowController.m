@@ -71,12 +71,24 @@
 //        [self _setViewsBelowIndexHidden:index-1];
 //    }
     
-    [self addChildViewController:controller];
-    [self addWindowView:controller.view atIndex:index];
+    if ( self.controllers.count != 0 ) {
+        [self presentViewController:controller animated:YES completion:^{
+            if ( handler ) {
+                handler();
+            }
+        }];
+        
+    } else {
+        [self addChildViewController:controller];
+        [self addWindowView:controller.view atIndex:index];
+    }
     
+//    [self addChildViewController:controller];
+//    [self addWindowView:controller.view atIndex:index];
+//
     [self.controllers addObject:controller];
-    
-    [self _addCompletionHandler:handler forController:controller];
+//
+//    [self _addCompletionHandler:handler forController:controller];
 }
 
 - (void)removeWindowView:(UIView *)view
