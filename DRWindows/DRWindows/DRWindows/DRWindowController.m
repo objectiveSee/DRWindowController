@@ -71,7 +71,9 @@
 //        [self _setViewsBelowIndexHidden:index-1];
 //    }
     
-    if ( self.controllers.count != 0 ) {
+    // TODO: Danny what were you thinking here?
+//    if ( self.controllers.count != 0 ) {
+    if ( 0 ) {
         [self presentViewController:controller animated:YES completion:^{
             if ( handler ) {
                 handler();
@@ -88,7 +90,7 @@
 //
     [self.controllers addObject:controller];
 //
-//    [self _addCompletionHandler:handler forController:controller];
+    [self _addCompletionHandler:handler forController:controller];
 }
 
 - (void)removeWindowView:(UIView *)view
