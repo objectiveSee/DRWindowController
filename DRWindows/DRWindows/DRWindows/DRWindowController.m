@@ -38,9 +38,42 @@
 
 #pragma mark - Public
 
-- (void)addWindowView:(UIView *)view atIndex:(NSInteger)index
+- (void)addWindowView:(UIView *)newView atIndex:(NSInteger)index
 {
-    [self.view insertSubview:view atIndex:index];
+    // NOTE: insertSubviews:atIndex: cannot take index values higher than the number of subviews (per Apple docs)
+    
+    NSParameterAssert(newView);
+    NSAssert(index >= 0, @"Should be non-negative");
+    
+    // tag all subviews that are added to the window controller
+    newView.tag = index;
+    
+    // insert at appropriate place
+    [self.view.subviews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        
+        UIView *subview = (UIView *)obj;
+        NSParameterAssert([subview isKindOfClass:[UIView class]]);
+        
+        // if tag is equal to or greater than
+        if (newView.tag < subview.tag) {
+            
+            [self.view insertSubview:newView belowSubview:subview];
+            *stop = YES;
+            
+        } else if (newView.tag == subview.tag) {
+            
+            [self.view insertSubview:newView aboveSubview:subview];
+            *stop = YES;
+            
+        }
+        
+    }];
+    
+    // check to ensure newView is in the subviews array - else add it at the top/end
+    if ( [self.view.subviews containsObject:newView] == NO ) {
+        [self.view addSubview:newView];
+    }
+    
 }
 
 - (void)addWindowController:(UIViewController *)controller atIndex:(NSInteger)index
@@ -58,38 +91,9 @@
     NSCAssert([NSThread isMainThread], @"Require main thread");
     NSParameterAssert(controller);
     
-    // options
-    // TODO: add more options
-//    if ( options && index >= 1) {
-//        // blur all background views
-//        NSParameterAssert(self.alphaView == nil);
-//        UIImage *backgroundImage = [UIView imageWithView:self.view];
-//        self.alphaView = [[UIImageView alloc] initWithImage:backgroundImage];
-//        [self addWindowView:self.alphaView atIndex:index-1];
-//        
-//        self.alphaView.alpha = 0.5;
-//        [self _setViewsBelowIndexHidden:index-1];
-//    }
-    
-    // TODO: Danny what were you thinking here?
-//    if ( self.controllers.count != 0 ) {
-    if ( 0 ) {
-        [self presentViewController:controller animated:YES completion:^{
-            if ( handler ) {
-                handler();
-            }
-        }];
-        
-    } else {
-        [self addChildViewController:controller];
-        [self addWindowView:controller.view atIndex:index];
-    }
-    
-//    [self addChildViewController:controller];
-//    [self addWindowView:controller.view atIndex:index];
-//
+    [self addChildViewController:controller];
+    [self addWindowView:controller.view atIndex:index];
     [self.controllers addObject:controller];
-//
     [self _addCompletionHandler:handler forController:controller];
 }
 
