@@ -121,6 +121,21 @@
     }
 }
 
+- (void)removeAllControllers {
+    
+    // remove completionHandlers
+    self.completionHandlers = [NSMutableSet new];
+    
+    // remove controllers
+    NSSet *controllersToRemove = [self.controllers copy];
+    
+    [controllersToRemove enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
+        NSParameterAssert([obj isKindOfClass:[UIViewController class]]);
+        [self removeWindowController:obj];
+    }];
+    
+}
+
 #pragma mark - Private
 
 - (void)_addCompletionHandler:(DRWindowCompletionBlock)handler forController:(UIViewController *)controller
