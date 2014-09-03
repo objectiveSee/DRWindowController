@@ -21,5 +21,6 @@ typedef void (^DRWindowCompletionBlock)();
 // Removing views
 - (void)removeWindowView:(UIView *)view;
 - (void)removeWindowController:(UIViewController *)controller;
+- (void)removeAllControllers;
 
 @end
