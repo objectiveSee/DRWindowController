@@ -1,6 +1,8 @@
 DRWindowController
 =========
 
+*sometimes you just want to put things on top of things*
+
 An Objective-C / Cocoa Touch class for managing a vertical "stack" of UIViews and UIViewControllers. This is a useful alternative to adding additional UIWindows to an application or having an unorganized approach to adding subviews to the main UIWindow. The Z-position of views can be specified to let you arrange which views are in front of others.
 
 
