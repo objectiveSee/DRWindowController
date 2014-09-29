@@ -3,10 +3,17 @@ DRWindowController
 
 *sometimes you just want to put things on top of things*
 
-An Objective-C / Cocoa Touch class for managing a vertical "stack" of UIViews and UIViewControllers. This is a useful alternative to adding additional UIWindows to an application or having an unorganized approach to adding subviews to the main UIWindow. The Z-position of views can be specified to let you arrange which views are in front of others.
+An Objective-C / Cocoa Touch class for managing a vertical "stack" of UIViews and UIViewControllers in the Z-dimension. This is a useful alternative to adding additional UIWindows to an application or having an unorganized approach to adding subviews to the main UIWindow. The Z-position of views can be specified to let you arrange which views are in front of others.
 
+### Installation with CocoaPods
 
-## Example ##
+[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like AFNetworking in your projects. See the ["Getting Started" guide for more information](https://github.com/AFNetworking/AFNetworking/wiki/Getting-Started-with-AFNetworking).
+
+```ruby
+pod 'DRWindowController', '~> 1.0'
+```
+
+## Show me what this magic is! ##
 
 ### Setting your root view controller
 ```objective-C
