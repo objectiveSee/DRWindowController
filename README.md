@@ -15,6 +15,10 @@ pod 'DRWindowController', '~> 1.0'
 ## Show me what this magic is! ##
 
 ### Setting your root view controller
+
+The easiest way to use this library is to set your app's rootViewController to be your own custom subclass of `DRWindowController`.  Then, it is very simple to add new view controllers or views.  You probably want to add your app's main controller in AppDidFinishLaunching.
+
+
 ```objective-C
 DRWindowController *windowController = [[DRWindowController alloc] initWithNibName:nil bundle:nil];
 self.window.rootViewController = windowController;
