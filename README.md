@@ -1,5 +1,4 @@
-DRWindowController
-=========
+<img src="https://raw.githubusercontent.com/objectiveSee/DRWindowController/master/GitHub%20Resources/splashimage.png" alt="DRWindowController" title="DRWindowController">
 
 *sometimes you just want to put things on top of things*
 
