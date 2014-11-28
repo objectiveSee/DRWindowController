@@ -62,8 +62,19 @@
             
         } else if (newView.tag == subview.tag) {
             
-            [self.view insertSubview:newView aboveSubview:subview];
-            *stop = YES;
+            // if next subview ALSO shares the same tag, move on and evaluate it
+            // else use this view
+            // this is necessary when > 2 views share the same index value
+            UIView *nextSubview;
+            NSInteger nextIndex = idx + 1;
+            if (nextIndex < self.view.subviews.count) {
+                nextSubview = [self.view.subviews objectAtIndex:idx + 1];
+            }
+            
+            if (!nextSubview || nextSubview.tag != newView.tag) {
+                [self.view insertSubview:newView aboveSubview:subview];
+                *stop = YES;
+            }
             
         }
         
