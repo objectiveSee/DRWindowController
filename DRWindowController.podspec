@@ -10,4 +10,5 @@ Pod::Spec.new do |s|
   s.source   = { :git => 'https://github.com/objectiveSee/DRWindowController.git', :tag => "1.0.2"}
   s.source_files = 'DRWindows/DRWindows/DRWindows/DRWindowController*'
   s.requires_arc = true
+  s.author   = { "Danny Ricciotti" => "fakeemail@dontemailme.com" }
 end
