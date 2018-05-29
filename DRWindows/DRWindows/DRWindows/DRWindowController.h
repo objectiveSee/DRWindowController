@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void (^DRWindowCompletionBlock)();
+typedef void (^DRWindowCompletionBlock)(void);
 
 @interface DRWindowController : UIViewController
 

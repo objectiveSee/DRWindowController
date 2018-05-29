@@ -11,7 +11,7 @@ An Objective-C / Cocoa Touch class for managing a vertical "stack" of UIViews an
 [CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like AFNetworking in your projects. See the ["Getting Started" guide for more information](https://github.com/AFNetworking/AFNetworking/wiki/Getting-Started-with-AFNetworking).
 
 ```ruby
-pod 'DRWindowController', '~> 1.0'
+pod 'DRWindowController', '~> 1.0.3'
 ```
 
 ## Show me what this magic is! ##
